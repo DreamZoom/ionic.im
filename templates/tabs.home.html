@@ -1,7 +1,9 @@
-<ion-view view-title="首页">
-	<ion-content class="padding">
-		<p>
-			<a href="#/chat" nav-transition="android">chat</a>
-		</p>
+<ion-view view-title="推荐">
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="item in items">
+				Hello, {{item}}!
+			</ion-item>
+		</ion-list>
 	</ion-content>
 </ion-view>

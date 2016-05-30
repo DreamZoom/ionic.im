@@ -1,19 +1,30 @@
 <ion-view view-title="聊天">
-	<ion-content class="padding">
-
-	</ion-content>
-	<ion-footer-bar align-title="left" class="bar-assertive">
-		<div class="buttons">
-			<button class="button">Left Button</button>
+	<ion-content delegate-handle="messageDetailsScroll">
+		<div ng-repeat="message in messages track by $index">
+			<p class="rj-message-time" ng-bind="message.time" ng-if="false"></p>
+			<div class="rj-message-wrap" ng-if="!isMe(message.to)">
+				<img ng-src="./imgs/me.png" class="rj-head-pic">
+				<span class="rj-triangle-left"></span>
+				<p class="rj-message" ng-bind="message.data"></p>
+			</div>
+			
+			<div class="rj-message-wrap" ng-if="isMe(message.to)">
+				<img ng-src="./imgs/me.png" class="rj-head-pic-right">
+				<span class="rj-triangle-right"></span>
+				<p class="rj-message-right" ng-bind="message.data"></p>
+			</div>
 		</div>
-		<div class="item item-input-inset">
-          <label class="item-input-wrapper">
-            <input type="text" placeholder="Email">
-          </label>
-         
-        </div>
-		<div class="buttons" ng-click="doSomething()">
-			<button class="button">Right Button</button>
+	</ion-content>
+	<ion-footer-bar align-title="center" class="bar-default">
+		<div class="buttons">
+			<i class="icon ion-android-happy font-size-30 "></i>
+		</div>
+		<div class="title">
+			<!---->
+			<input type="text" class="rich-text" ng-model="messageText" value="" />
+		</div>
+		<div class="buttons">
+			<i class="icon ion-ios-paperplane-outline font-size-30" ng-click="sendMessage()"></i>
 		</div>
 	</ion-footer-bar>
 </ion-view>

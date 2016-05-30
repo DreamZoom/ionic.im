@@ -3,76 +3,45 @@
 
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<title>im</title>
 		<link rel="stylesheet" type="text/css" href="framework/css/ionic.min.css" />
-		<script src="framework/js/ionic.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		
+		<script src="sdk/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="sdk/json2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="sdk/strophe.js" type="text/javascript" charset="utf-8"></script>
+		<script src="sdk/easemob.im-1.0.7.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="framework/js/ionic.bundle.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ogg.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/controllers.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/routes.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/services.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			var App = angular.module("ionicIM", ['ionic'])
-				.controller("tabsController",function($scope ,$state) {
+			var App = angular.module("ionicIM", ['ionic','ionicIM.controllers','ionicIM.routes','ionicIM.services'])
+				
+				.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider,$imConfigProvider) { 
+					$ionicConfigProvider.tabs.position('top'); // other values: top 
 					
-					$scope.Tap=function($element){
-						
-					}
-				})
-				.config(function($stateProvider, $urlRouterProvider) {
-					$stateProvider
-						.state('tabs', {
-							url: "/tab",
-							abstract: true,
-							templateUrl: "templates/tabs.html",
-							controller:"tabsController"
-						})
-						.state('tabs.home', {
-							url: "/home",
-							views: {
-								'home': {
-									templateUrl: "templates/tabs.home.html",
-								}
-							} 
-						})
-						.state('tabs.near', {
-							url: "/near",
-							views: {
-								'near': {
-									templateUrl: "templates/tabs.near.html",
-								}
-							}
-						})
-						.state('tabs.me', {
-							url: "/me",
-							views: {
-								'me': {
-									templateUrl: "templates/tabs.me.html"
-								}
-							}
-						})
-						.state('tabs.at', {
-							url: "/at",
-							views: {
-								'at': {
-									templateUrl: "templates/tabs.at.html"
-								}
-							}
-						})
-						.state('chat', {
-							url: "/chat",
-							templateUrl: "templates/chat.html"
-						});
-					$urlRouterProvider.otherwise("/tab/home");
+					$imConfigProvider.setAppKey("dreamzoom#imchat");
 				});
+				
+				
+				
 		</script>
 	</head>
- 
+
 	<body ng-app="ionicIM">
 		<ion-nav-bar class="bar-positive nav-title-slide-ios7">
-			<ion-nav-back-button>
-			</ion-nav-back-button>
 		</ion-nav-bar>
-
 		<ion-nav-view animation="slide-left-right">
-			
 		</ion-nav-view>
+		
+		
+		    
+	
 	</body>
 
 </html>

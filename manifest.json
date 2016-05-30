@@ -1,4 +1,4 @@
-﻿{
+{
     "@platforms": ["android", "iPhone", "iPad"],
     "id": "H59E1B57F",/*应用的标识，创建应用时自动生成，勿手动修改*/
     "name": "ionic.im",/*应用名称，程序桌面图标名称*/
@@ -199,5 +199,68 @@
                 }
             }
         }
-    }
+    },
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"templates/tabs.near.html",
+					"framework/js/ionic.bundle.min.js",
+					"framework/css/ionic.min.css",
+					"templates/tabs.home.html",
+					"js/routes.js",
+					"templates/tabs.message.html",
+					"templates/tabs.user.html",
+					"js/controllers.js",
+					"templates/chat.html",
+					"css/app.css",
+					"js/ogg.js",
+					"js/app.js",
+					"templates/setting.html",
+					"sdk/strophe.js",
+					"js/services.js",
+					"sdk/easemob.im-1.0.7.js",
+					"framework/js/ionic.bundle.js",
+					"sdk/jquery-1.11.1.js",
+					"sdk/json2.js"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"framework/js/angular/angular-animate.js",
+				"framework/js/ionic-angular.min.js",
+				"sdk/release.txt",
+				"framework/js/angular/angular-resource.js",
+				"sdk/quickstart.md",
+				"framework/js/angular/angular-sanitize.js",
+				"framework/fonts/ionicons.woff",
+				"framework/js/angular-ui/angular-ui-router.js",
+				"debug.log",
+				"sdk/LICENSE",
+				"framework/fonts/ionicons.svg",
+				"framework/js/angular/angular-sanitize.min.js",
+				"sdk/swfupload/swfupload.js",
+				"framework/css/ionic.css",
+				"sdk/swfupload/swfupload.swf",
+				"framework/js/ionic-angular.js",
+				"templates/tabs.html",
+				"framework/fonts/ionicons.ttf",
+				"framework/js/angular-ui/angular-ui-router.min.js",
+				"framework/js/ionic.js",
+				"framework/js/angular/angular-resource.min.js",
+				"framework/js/angular/angular-animate.min.js",
+				"framework/js/angular/angular.min.js",
+				"framework/js/angular/angular.js",
+				"sdk/jplayer/jquery.jplayer.min.js",
+				"sdk/jplayer/jquery.jplayer.swf",
+				"framework/fonts/ionicons.eot",
+				"framework/version.json",
+				"framework/js/ionic.min.js",
+				"sdk/swfupload/swfupload.cookie.js"
+			]
+		}
+	}
 }
